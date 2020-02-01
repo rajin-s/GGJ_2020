@@ -23,17 +23,17 @@ public class DotSequence : MonoBehaviour
     }
 
     // TEST
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.P))
-        {
-            Spawn();
-        }
-        else if (Input.GetKeyDown(KeyCode.O))
-        {
-            Despawn();
-        }
-    }
+    // private void Update()
+    // {
+    //     if (Input.GetKeyDown(KeyCode.P))
+    //     {
+    //         Spawn();
+    //     }
+    //     else if (Input.GetKeyDown(KeyCode.O))
+    //     {
+    //         Despawn();
+    //     }
+    // }
 
     private void OnEnable()
     {

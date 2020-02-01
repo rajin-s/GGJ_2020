@@ -12,13 +12,29 @@ public class Instrument : MonoBehaviour
     [Header("Clip")]
     [SerializeField] private AudioClip clip;
     [SerializeField] private float clipPitch = 440;
-    [SerializeField] private float volume = 0.5f;
+    [SerializeField, Range(0,1)] private float volume = 0.5f;
 
     [Header("Config")]
     [SerializeField] private int channelCount = 32;
     [SerializeField] private UnityEngine.Audio.AudioMixerGroup outputMixerGroup;
 
     private AudioSource[] channels;
+
+    public float Volume
+    {
+        get { return volume; }
+        set
+        {
+            volume = value;
+            if (channels == null) return;
+            
+            for (int i = 0; i < channelCount; i++)
+            {
+                channels[i].volume = volume;
+            }
+        }
+    }
+    [Range(0,1)] public float completeness = 1.0f;
 
     private void CreateChannels()
     {
@@ -78,7 +94,10 @@ public class Instrument : MonoBehaviour
         int next = part.GetNextNote();
         if (next != noNote)
         {
-            PlayNote(next);
+            if (Random.value <= completeness)
+            {
+                PlayNote(next);
+            }
         }
     }
 

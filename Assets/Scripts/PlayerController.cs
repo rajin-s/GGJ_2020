@@ -4,23 +4,35 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField] float maxSpeed = 5.0f;
-    [SerializeField] float acceleration = 10.0f;
-    [SerializeField] float damping = 10.0f;
+    [SerializeField] private float maxSpeed = 5.0f;
+    [SerializeField] private float acceleration = 10.0f;
+    [SerializeField] private float damping = 10.0f;
 
-    Rigidbody2D body;
-    Vector2 input;
-    bool hasInput;
+    [SerializeField] string inputNamePrefix = "";
+    private string horizontalInputName;
+    private string verticalInputName;
+    private string attractInputName;
+
+    private Rigidbody2D body;
+    private SheepAttractor sheepAttractor;
+
+    private Vector2 input;
+    private bool hasInput;
 
     void Awake() 
     {
         body = GetComponent<Rigidbody2D>();
+        sheepAttractor = GetComponentInChildren<SheepAttractor>();
+
+        horizontalInputName = inputNamePrefix + "Horizontal";
+        verticalInputName = inputNamePrefix + "Vertical";
+        attractInputName = inputNamePrefix + "Attract";
     }
 
     void Update()
     {
-        input.x = Input.GetAxis("Horizontal");
-        input.y = Input.GetAxis("Vertical");
+        input.x = Input.GetAxis(horizontalInputName);
+        input.y = Input.GetAxis(verticalInputName);
 
         input.Normalize();
         if (input.sqrMagnitude > 0.1f)
@@ -30,6 +42,15 @@ public class PlayerController : MonoBehaviour
         else
         {
             hasInput = false;
+        }
+
+        if (Input.GetButton(attractInputName))
+        {
+            sheepAttractor.SetActive(true);
+        }
+        else
+        {
+            sheepAttractor.SetActive(false);
         }
     }
 
