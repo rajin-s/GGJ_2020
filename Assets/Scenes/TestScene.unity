@@ -260,7 +260,7 @@ GameObject:
   - component: {fileID: 87309183}
   - component: {fileID: 87309184}
   m_Layer: 0
-  m_Name: Marimba Chord 4
+  m_Name: Chord 3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -293,11 +293,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: {fileID: 0}
-  part: {fileID: 11400000, guid: d97cb22ceab6fdb45af7a834016b5dab, type: 2}
+  part: {fileID: 11400000, guid: d285c7f7e22e2aa44989481d30e1392f, type: 2}
   octave: 3
-  clip: {fileID: 8300000, guid: c961d0ef7cb5af743b27c40f9c3d019e, type: 3}
+  clip: {fileID: 8300000, guid: 0655d2d67b786334a8ff93e312aa6474, type: 3}
   clipPitch: 440
-  volume: 0.15
+  volume: 0.3
   channelCount: 16
   outputMixerGroup: {fileID: 24300002, guid: 16f9440cd76d7f143b334d7c3d737d54, type: 2}
 --- !u!114 &87309184
@@ -312,7 +312,72 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f23f74e042501e49b17ecb0e1634ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rate: 2
+  rate: 3
+--- !u!1 &458093520
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 458093521}
+  - component: {fileID: 458093523}
+  - component: {fileID: 458093522}
+  m_Layer: 0
+  m_Name: Chord 4
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &458093521
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458093520}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 660415809}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &458093522
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458093520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6f23f74e042501e49b17ecb0e1634ebb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  rate: 3
+--- !u!114 &458093523
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 458093520}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 36abf032c6ccac74695c2bb139649586, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  key: {fileID: 0}
+  part: {fileID: 11400000, guid: 1908e051aeed59b439b2fa22722e8277, type: 2}
+  octave: 3
+  clip: {fileID: 8300000, guid: 0655d2d67b786334a8ff93e312aa6474, type: 3}
+  clipPitch: 440
+  volume: 0.3
+  channelCount: 16
+  outputMixerGroup: {fileID: 24300002, guid: 16f9440cd76d7f143b334d7c3d737d54, type: 2}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -408,7 +473,7 @@ GameObject:
   - component: {fileID: 653698380}
   - component: {fileID: 653698381}
   m_Layer: 0
-  m_Name: Marimba Chord 3
+  m_Name: Chord 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -441,11 +506,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: {fileID: 0}
-  part: {fileID: 11400000, guid: f4d8d60cce185784f8d7084f6dd446e0, type: 2}
+  part: {fileID: 11400000, guid: 8d3574d1242b1ca4291cfcb438183139, type: 2}
   octave: 3
-  clip: {fileID: 8300000, guid: c961d0ef7cb5af743b27c40f9c3d019e, type: 3}
+  clip: {fileID: 8300000, guid: 0655d2d67b786334a8ff93e312aa6474, type: 3}
   clipPitch: 440
-  volume: 0.15
+  volume: 0.3
   channelCount: 16
   outputMixerGroup: {fileID: 24300002, guid: 16f9440cd76d7f143b334d7c3d737d54, type: 2}
 --- !u!114 &653698381
@@ -491,7 +556,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4d72c2f9984ed2e4e9809f7207fec0a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  beatsPerMinute: 120
+  beatsPerMinute: 90
 --- !u!4 &660415809
 Transform:
   m_ObjectHideFlags: 0
@@ -508,10 +573,11 @@ Transform:
   - {fileID: 1757167454}
   - {fileID: 653698379}
   - {fileID: 87309182}
+  - {fileID: 458093521}
   - {fileID: 736091016}
   - {fileID: 2129022926}
-  - {fileID: 1705839493}
   - {fileID: 2005351641}
+  - {fileID: 1705839493}
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -527,9 +593,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 04ec84be771e32e4cabba1f1ae758094, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keySequence: {fileID: 11400000, guid: ef75bf38fbdaf1f41b69bd434c438ab0, type: 2}
+  keySequence: {fileID: 11400000, guid: c0b29c619c1aa364d9d37bb6e79278a3, type: 2}
   subdivision: 0
-  subdivisionCount: 2
+  subdivisionCount: 1
 --- !u!1 &736091015
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,7 +608,7 @@ GameObject:
   - component: {fileID: 736091017}
   - component: {fileID: 736091018}
   m_Layer: 0
-  m_Name: Marimba Rand
+  m_Name: Melody Line
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -560,7 +626,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 660415809}
-  m_RootOrder: 5
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &736091017
 MonoBehaviour:
@@ -575,9 +641,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: {fileID: 0}
-  part: {fileID: 11400000, guid: dd7c51bb9570c5f4694c99e696f3f406, type: 2}
+  part: {fileID: 11400000, guid: c6141c1a63417da4b906d9535aeabb2c, type: 2}
   octave: 4
-  clip: {fileID: 8300000, guid: c961d0ef7cb5af743b27c40f9c3d019e, type: 3}
+  clip: {fileID: 8300000, guid: ed4e258bff26ba94eaf8f2eb2f2c5a21, type: 3}
   clipPitch: 440
   volume: 0.25
   channelCount: 32
@@ -607,7 +673,7 @@ GameObject:
   - component: {fileID: 1171622940}
   - component: {fileID: 1171622942}
   m_Layer: 0
-  m_Name: Marimba Bass
+  m_Name: Bass
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -626,11 +692,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: {fileID: 0}
-  part: {fileID: 11400000, guid: e0dc88353b1d10748881ae718a41ae45, type: 2}
+  part: {fileID: 11400000, guid: 6e3eb7074a71a8a4fac612171463116e, type: 2}
   octave: 2
-  clip: {fileID: 8300000, guid: c961d0ef7cb5af743b27c40f9c3d019e, type: 3}
-  clipPitch: 440
-  volume: 0.5
+  clip: {fileID: 8300000, guid: 1574d812906c95a4bb0fae20d7d80637, type: 3}
+  clipPitch: 110
+  volume: 1
   channelCount: 8
   outputMixerGroup: {fileID: 24300002, guid: 16f9440cd76d7f143b334d7c3d737d54, type: 2}
 --- !u!4 &1171622941
@@ -659,7 +725,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f23f74e042501e49b17ecb0e1634ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rate: 1
+  rate: 3
 --- !u!1 &1275354508
 GameObject:
   m_ObjectHideFlags: 0
@@ -677,7 +743,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1275354509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -693,8 +759,8 @@ MonoBehaviour:
   key: {fileID: 0}
   part: {fileID: 11400000, guid: 12f2cf595c4e9bf47856f6896ba9a338, type: 2}
   octave: 4
-  clip: {fileID: 8300000, guid: c961d0ef7cb5af743b27c40f9c3d019e, type: 3}
-  clipPitch: 440
+  clip: {fileID: 8300000, guid: 8dce63367204c0741b621bae2fb02c6f, type: 3}
+  clipPitch: 220
   volume: 0.25
   channelCount: 32
   outputMixerGroup: {fileID: 24300002, guid: 16f9440cd76d7f143b334d7c3d737d54, type: 2}
@@ -737,7 +803,7 @@ GameObject:
   - component: {fileID: 1705839495}
   - component: {fileID: 1705839494}
   m_Layer: 0
-  m_Name: Marimba Manual
+  m_Name: User Keyboard
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -755,7 +821,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 660415809}
-  m_RootOrder: 7
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1705839494
 MonoBehaviour:
@@ -769,7 +835,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4a40604bd9b9d045a5a3b90ef47b5e8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  harmony: 0500000008000000
+  harmony: 08000000
 --- !u!114 &1705839495
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -785,7 +851,7 @@ MonoBehaviour:
   key: {fileID: 0}
   part: {fileID: 11400000, guid: 8be0a591aa7fbda48b0b652d6ed968bf, type: 2}
   octave: 4
-  clip: {fileID: 8300000, guid: c961d0ef7cb5af743b27c40f9c3d019e, type: 3}
+  clip: {fileID: 8300000, guid: ed4e258bff26ba94eaf8f2eb2f2c5a21, type: 3}
   clipPitch: 440
   volume: 0.5
   channelCount: 32
@@ -802,7 +868,7 @@ GameObject:
   - component: {fileID: 1757167455}
   - component: {fileID: 1757167456}
   m_Layer: 0
-  m_Name: Marimba Chord 2
+  m_Name: Chord 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -835,11 +901,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: {fileID: 0}
-  part: {fileID: 11400000, guid: 265c9ea406b2b3c468340ee5737af10e, type: 2}
+  part: {fileID: 11400000, guid: 6e3eb7074a71a8a4fac612171463116e, type: 2}
   octave: 3
-  clip: {fileID: 8300000, guid: c961d0ef7cb5af743b27c40f9c3d019e, type: 3}
+  clip: {fileID: 8300000, guid: 0655d2d67b786334a8ff93e312aa6474, type: 3}
   clipPitch: 440
-  volume: 0.15
+  volume: 0.3
   channelCount: 16
   outputMixerGroup: {fileID: 24300002, guid: 16f9440cd76d7f143b334d7c3d737d54, type: 2}
 --- !u!114 &1757167456
@@ -854,7 +920,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f23f74e042501e49b17ecb0e1634ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rate: 2
+  rate: 3
 --- !u!1 &2005351640
 GameObject:
   m_ObjectHideFlags: 0
@@ -872,7 +938,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2005351641
 Transform:
   m_ObjectHideFlags: 0
@@ -899,7 +965,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6f23f74e042501e49b17ecb0e1634ebb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rate: 3
+  rate: 4
 --- !u!114 &2005351643
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,11 +979,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: {fileID: 0}
-  part: {fileID: 11400000, guid: 8a297cc904daf934bb29f2fa7dcfb1d0, type: 2}
+  part: {fileID: 11400000, guid: e55a2373236a97642adbf5eb13522d16, type: 2}
   octave: 3
   clip: {fileID: 0}
   clipPitch: 440
-  volume: 1
+  volume: 0.5
   channelCount: 32
   outputMixerGroup: {fileID: 24300002, guid: 16f9440cd76d7f143b334d7c3d737d54, type: 2}
   kit: {fileID: 11400000, guid: 4ba0602dacb00b8478b1aee3c8763860, type: 2}
@@ -938,7 +1004,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2129022926
 Transform:
   m_ObjectHideFlags: 0
@@ -951,7 +1017,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 660415809}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2129022927
 MonoBehaviour:
