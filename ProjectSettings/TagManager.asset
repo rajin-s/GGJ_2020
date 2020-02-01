@@ -15,7 +15,7 @@ TagManager:
   - 
   - Player
   - Sheep
-  - 
+  - Timeline
   - 
   - 
   - 
@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Timeline
+    uniqueID: 2458117573
+    locked: 0
+  - name: Background
+    uniqueID: 3378588225
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Foreground
+    uniqueID: 2847377349
     locked: 0

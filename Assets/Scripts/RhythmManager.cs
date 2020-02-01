@@ -33,8 +33,6 @@ public class RhythmManager : MonoBehaviour
         singleton = this;
         secondsPerSixteenth = 60f / beatsPerMinute / 4f;
         secondsPerEighthTriplet = 60f / beatsPerMinute / 6f;
-
-        Invoke("StartTime", 1);
     }
 
     private void OnDestroy()
@@ -50,7 +48,7 @@ public class RhythmManager : MonoBehaviour
         }
     }
 
-    private void StartTime()
+    public void StartTime()
     {
         playing = true;
 
@@ -59,6 +57,11 @@ public class RhythmManager : MonoBehaviour
 
         sixteenthCount = 0;
         eighthTripletCount = 0;
+    }
+    public void EndTime()
+    {
+        playing = false;
+        timer.Stop();
     }
 
     private void UpdateTime()

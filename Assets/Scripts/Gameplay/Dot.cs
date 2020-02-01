@@ -8,7 +8,9 @@ public class Dot : MonoBehaviour
     
     private DotSequence sequence;
     private SpriteRenderer sprite;
+    
     private bool alive;
+    private bool fading;
 
     private void Awake()
     {
@@ -30,7 +32,7 @@ public class Dot : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (!alive) return;
+        if (!alive || fading) return;
 
         if (other.gameObject.CompareTag(targetTag))
         {
@@ -46,6 +48,7 @@ public class Dot : MonoBehaviour
     }
     public void Despawn()
     {
+        fading = true;
         if (alive)
         {
             StartCoroutine(MakeDespawnRoutine());
