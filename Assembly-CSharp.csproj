@@ -45,7 +45,22 @@
     <ImplicitlyExpandDesignTimeFacades>false</ImplicitlyExpandDesignTimeFacades>
   </PropertyGroup>
   <ItemGroup>
-     <Compile Include="Assets\Scripts\TestScript.cs" />
+     <Compile Include="Assets\Scripts\AutoPlayer.cs" />
+     <Compile Include="Assets\Scripts\Instrument.cs" />
+     <Compile Include="Assets\Scripts\KeyManager.cs" />
+     <Compile Include="Assets\Scripts\ManualPlayer.cs" />
+     <Compile Include="Assets\Scripts\Music\Key.cs" />
+     <Compile Include="Assets\Scripts\Music\KeySequence.cs" />
+     <Compile Include="Assets\Scripts\Music\LinearPart.cs" />
+     <Compile Include="Assets\Scripts\Music\Part.cs" />
+     <Compile Include="Assets\Scripts\Music\PercussionKit.cs" />
+     <Compile Include="Assets\Scripts\Music\Pitch.cs" />
+     <Compile Include="Assets\Scripts\Music\RandomPart.cs" />
+     <Compile Include="Assets\Scripts\Music\Rhythm.cs" />
+     <Compile Include="Assets\Scripts\Music\SequencePart.cs" />
+     <Compile Include="Assets\Scripts\Music\Tonality.cs" />
+     <Compile Include="Assets\Scripts\PercussionInstrument.cs" />
+     <Compile Include="Assets\Scripts\RhythmManager.cs" />
  <Reference Include="UnityEngine">
  <HintPath>C:/Program Files/Unity/Hub/Editor/2019.3.0f6/Editor/Data/Managed/UnityEngine/UnityEngine.dll</HintPath>
  </Reference>
