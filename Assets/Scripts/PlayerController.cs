@@ -4,26 +4,44 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    Vector2 movement = new Vector2();
+    [SerializeField] float maxSpeed = 5.0f;
+    [SerializeField] float acceleration = 10.0f;
+    [SerializeField] float damping = 10.0f;
 
-    Rigidbody2D rb2d;
-
-    [SerializeField]
-    int speed;
+    Rigidbody2D body;
+    Vector2 input;
+    bool hasInput;
 
     void Awake() 
     {
-        rb2d = this.GetComponent<Rigidbody2D>();
+        body = GetComponent<Rigidbody2D>();
     }
 
     void Update()
     {
-        movement.x = (Input.GetAxis("Horizontal"));
-        movement.y = (Input.GetAxis("Vertical"));
+        input.x = Input.GetAxis("Horizontal");
+        input.y = Input.GetAxis("Vertical");
+
+        input.Normalize();
+        if (input.sqrMagnitude > 0.1f)
+        {
+            hasInput = true;
+        }
+        else
+        {
+            hasInput = false;
+        }
     }
 
     void FixedUpdate() 
     {
-        rb2d.AddForce(movement * speed);
+        if (hasInput)
+        {
+            body.velocity = Vector2.ClampMagnitude(body.velocity + input * acceleration * Time.fixedDeltaTime, maxSpeed);
+        }
+        else
+        {
+            body.velocity = Vector2.Lerp(body.velocity, Vector2.zero, Time.fixedDeltaTime * damping);
+        }
     }
 }
