@@ -46,22 +46,22 @@ public class AudioManager : MonoBehaviour
         // Get band data
         for (int i = (int)(lowRange.x); i < (int)(lowRange.y); i++)
         {
-            if (i < 0 || i >= sampleCount) break;
+            //if (i < 0 || i >= sampleCount) break;
             low += samples[i];
         }
         for (int i = (int)(midRange.x); i < (int)(midRange.y); i++)
         {
-            if (i < 0 || i >= sampleCount) break;
+            //if (i < 0 || i >= sampleCount) break;
             mid += samples[i];
         }
         for (int i = (int)(highRange.x); i < (int)(highRange.y); i++)
         {
-            if (i < 0 || i >= sampleCount) break;
+            //if (i < 0 || i >= sampleCount) break;
             high += samples[i];
         }
         for (int i = (int)(averageRange.x); i < (int)(averageRange.y); i++)
         {
-            if (i < 0 || i >= sampleCount) break;
+            //if (i < 0 || i >= sampleCount) break;
             average += samples[i];
         }
 
