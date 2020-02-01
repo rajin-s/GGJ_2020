@@ -33,6 +33,7 @@ public class KeyManager : MonoBehaviour
     private void Awake()
     {
         instruments = GetComponentsInChildren<Instrument>();
+        keySequence = Instantiate(keySequence);
     }
 
     private void OnEnable()

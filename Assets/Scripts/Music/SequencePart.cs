@@ -3,10 +3,18 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "SequencePart", menuName = "Music/Part/Sequence", order = 0)]
 public class SequencePart : Part
 {
+    [Multiline]
     [SerializeField] private string sequenceString = "";
+    [SerializeField] private int debugLength;
+
     private int[] sequence;
 
     private int current;
+
+    private void OnValidate()
+    {
+        debugLength = sequenceString.Split(' ').Length;
+    }
 
     private void Awake()
     {

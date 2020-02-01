@@ -11,8 +11,8 @@ public class KeySequence : ScriptableObject
 
     [SerializeField] private Phrase[] phrases;
 
-    private int currentPhraseIndex;
-    private int currentKeyIndex;
+    private int currentPhraseIndex = 0;
+    private int currentKeyIndex = -1;
 
     public Key GetNextKey()
     {

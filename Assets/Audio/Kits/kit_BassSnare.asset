@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: kit_BassSnare
   m_EditorClassIdentifier: 
   clips:
-  - {fileID: 8300000, guid: 53b46100f835eaa47803be40d3371271, type: 3}
-  - {fileID: 8300000, guid: 38b6b375544df1b43b355ec2ed6c83f1, type: 3}
+  - {fileID: 8300000, guid: a47326357c803cc4baba73abf6389f15, type: 3}
+  - {fileID: 8300000, guid: 1f1d049bf36379943b7c7d8db4556bf8, type: 3}
