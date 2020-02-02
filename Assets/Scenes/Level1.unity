@@ -321,7 +321,7 @@ Transform:
   m_GameObject: {fileID: 80849099}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.0815907, y: -10.49271, z: -1.1278605}
-  m_LocalScale: {x: 47.27163, y: 0.63, z: 1}
+  m_LocalScale: {x: 36.635513, y: 0.63, z: 1}
   m_Children: []
   m_Father: {fileID: 1635769676}
   m_RootOrder: 2
@@ -752,6 +752,11 @@ PrefabInstance:
         type: 3}
       propertyPath: lifetime
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123582150728911630, guid: 54e5a9f6bc67c8d49b87b184acf51940,
+        type: 3}
+      propertyPath: maxSheep
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54e5a9f6bc67c8d49b87b184acf51940, type: 3}
@@ -1381,7 +1386,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 674431718}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 21.29, y: 0.06728971, z: -1.1278605}
+  m_LocalPosition: {x: 21.2, y: 0.06728971, z: -1.1278605}
   m_LocalScale: {x: 22.025621, y: 0.62999994, z: 1}
   m_Children: []
   m_Father: {fileID: 1635769676}
@@ -2175,7 +2180,7 @@ Transform:
   m_GameObject: {fileID: 982636960}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 3.0815907, y: 10.37729, z: -1.1278605}
-  m_LocalScale: {x: 47.27163, y: 1, z: 1}
+  m_LocalScale: {x: 37.22641, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 1635769676}
   m_RootOrder: 3
@@ -2850,6 +2855,11 @@ PrefabInstance:
       propertyPath: lifetime
       value: 40
       objectReference: {fileID: 0}
+    - target: {fileID: 7002135276994649493, guid: b2bae578c4303144a8f98260ed79bd0c,
+        type: 3}
+      propertyPath: maxSheep
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7002135276994649495, guid: b2bae578c4303144a8f98260ed79bd0c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2923,6 +2933,11 @@ PrefabInstance:
         type: 3}
       propertyPath: lifetime
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 7002135276994649493, guid: b2bae578c4303144a8f98260ed79bd0c,
+        type: 3}
+      propertyPath: maxSheep
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7002135276994649495, guid: b2bae578c4303144a8f98260ed79bd0c,
         type: 3}
@@ -3183,6 +3198,11 @@ PrefabInstance:
         type: 3}
       propertyPath: lifetime
       value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123582150728911630, guid: 54e5a9f6bc67c8d49b87b184acf51940,
+        type: 3}
+      propertyPath: maxSheep
+      value: 5
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54e5a9f6bc67c8d49b87b184acf51940, type: 3}
