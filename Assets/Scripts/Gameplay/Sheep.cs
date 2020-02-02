@@ -3,8 +3,6 @@ using System.Collections;
 
 public class Sheep : MonoBehaviour
 {
-    private SpriteRenderer sprite;
-    private Color baseSpriteColor;
     private Rigidbody2D body;
 
     [SerializeField] private int value = 1;
@@ -15,10 +13,7 @@ public class Sheep : MonoBehaviour
 
     private void Awake()
     {
-        sprite = GetComponent<SpriteRenderer>();
         body = GetComponent<Rigidbody2D>();
-
-        baseSpriteColor = sprite.color;
     }
 
     private void OnEnable()
@@ -34,9 +29,7 @@ public class Sheep : MonoBehaviour
 
     private void Fade(float t)
     {
-        Color c = baseSpriteColor;
-        c.a *= t;
-        sprite.color = c;
+        transform.localScale = t * Vector3.one;
     }
 
     private void MoveToNewPosition()
@@ -62,11 +55,12 @@ public class Sheep : MonoBehaviour
                 t += Time.deltaTime / fadeDuration;
                 if (t > 1.0f) t = 1.0f;
 
-                Fade(1.0f - t);
+                Fade(1.01f - t);
 
                 yield return null;
             }
-
+            Fade(0);
+            
             MoveToNewPosition();
 
             // Fade In
