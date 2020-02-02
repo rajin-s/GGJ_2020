@@ -14,10 +14,19 @@ public class Pen : MonoBehaviour
     private float baseScale = 1;
 
     private Instrument instrument;
+    
+    private void Awake()
+    {
+        baseScale = transform.localScale.x;
+
+        instrument = GetComponent<Instrument>();
+        UpdateInstrument();
+
+        transform.localScale = Vector3.zero;
+    }
 
     public void Spawn()
     {
-        gameObject.SetActive(true);
         StartCoroutine(MakeLifetimeRoutine());
     }
 
@@ -55,16 +64,6 @@ public class Pen : MonoBehaviour
             t += Time.deltaTime / lifetime;
             yield return null;
         }
-    }
-
-    private void Awake()
-    {
-        baseScale = transform.localScale.x;
-
-        instrument = GetComponent<Instrument>();
-        UpdateInstrument();
-
-        gameObject.SetActive(false);
     }
 
     private void OnTriggerEnter2D(Collider2D other)
