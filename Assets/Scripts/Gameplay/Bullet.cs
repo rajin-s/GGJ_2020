@@ -15,6 +15,9 @@ public class Bullet : MonoBehaviour
 
     [SerializeField] private ParticleSystem hitEffect;
     [SerializeField] private AudioSource hitSFX;
+    
+    [SerializeField] private ParticleSystem fireEffect;
+    [SerializeField] private AudioSource fireSFX;
 
     private Vector2 velocity;
 
@@ -26,6 +29,9 @@ public class Bullet : MonoBehaviour
 
         coreSprite.enabled = true;
         trail.Play();
+
+        fireSFX.Play();
+        fireEffect.Play();
 
         Invoke("Deactivate", lifetime);
     }
@@ -62,7 +68,7 @@ public class Bullet : MonoBehaviour
 
     private void Update()
     {
-        if (!IsAvailable) return;
+        if (IsAvailable) return;
 
         transform.position += (Vector3)velocity * Time.deltaTime;
     }
