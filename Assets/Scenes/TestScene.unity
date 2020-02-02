@@ -3076,7 +3076,7 @@ PrefabInstance:
     - target: {fileID: 3742096235865710947, guid: e3b55a656aa62d142b265f8def6dd000,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3742096235865710974, guid: e3b55a656aa62d142b265f8def6dd000,
         type: 3}
@@ -3311,7 +3311,7 @@ PrefabInstance:
     - target: {fileID: 3742096235865710947, guid: e3b55a656aa62d142b265f8def6dd000,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3742096235865710974, guid: e3b55a656aa62d142b265f8def6dd000,
         type: 3}
@@ -3622,7 +3622,7 @@ PrefabInstance:
     - target: {fileID: 3742096235865710947, guid: e3b55a656aa62d142b265f8def6dd000,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3742096235865710974, guid: e3b55a656aa62d142b265f8def6dd000,
         type: 3}
@@ -3947,7 +3947,7 @@ PrefabInstance:
     - target: {fileID: 3742096235865710947, guid: e3b55a656aa62d142b265f8def6dd000,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3742096235865710974, guid: e3b55a656aa62d142b265f8def6dd000,
         type: 3}
@@ -6003,7 +6003,7 @@ PrefabInstance:
     - target: {fileID: 3742096235865710947, guid: e3b55a656aa62d142b265f8def6dd000,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3742096235865710974, guid: e3b55a656aa62d142b265f8def6dd000,
         type: 3}
@@ -7105,7 +7105,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &2052059273
 Transform:
   m_ObjectHideFlags: 0
@@ -7701,6 +7701,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProximityB_Bad
       objectReference: {fileID: 0}
+    - target: {fileID: 785063868318002128, guid: 36a38690c40a7694a87588a5eff47f79,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 785063868318002129, guid: 36a38690c40a7694a87588a5eff47f79,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -7918,6 +7923,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: ProximityA_Bad
       objectReference: {fileID: 0}
+    - target: {fileID: 8611075204535552060, guid: 39f430656eac1e1479a377c1d52881b1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8611075204535552061, guid: 39f430656eac1e1479a377c1d52881b1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8055,6 +8065,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Scene Setup
+      objectReference: {fileID: 0}
+    - target: {fileID: 4405170086172824942, guid: 5385b51bb3bda434eb461c5a30926dc0,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4405170086421440914, guid: 5385b51bb3bda434eb461c5a30926dc0,
         type: 3}
@@ -8234,6 +8249,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SheepPenB_Bad
       objectReference: {fileID: 0}
+    - target: {fileID: 7525136924316405195, guid: 0a8ca454cefd9f243b4ce2a1306c71f1,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7525136924316405196, guid: 0a8ca454cefd9f243b4ce2a1306c71f1,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -8302,6 +8322,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SheepPenA_Bad
+      objectReference: {fileID: 0}
+    - target: {fileID: 7237426057979114659, guid: 3807e1a728f480948b26ec74255a3f15,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7237426057979114660, guid: 3807e1a728f480948b26ec74255a3f15,
         type: 3}
@@ -8495,6 +8520,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: Cannon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8833279485317826449, guid: 1eec07e5aee3ba74991f9451dd0b38bd,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1eec07e5aee3ba74991f9451dd0b38bd, type: 3}
