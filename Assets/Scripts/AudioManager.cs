@@ -20,6 +20,8 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private Vector2 highRange;
     [SerializeField] private Vector2 averageRange;
 
+    [SerializeField] private float maxRange = 24000;
+
     private float lowMax = 1, midMax = 1, highMax = 1, averageMax = 1;
 
     //private AudioSource source;
@@ -41,35 +43,39 @@ public class AudioManager : MonoBehaviour
         AudioListener.GetSpectrumData(samples, channel, FFTWindow.Blackman);
 
         float low = 0, mid = 0, high = 0, average = 0;
-        int lowCount = 1, midCount = 1, highCount = 1, averageCount = 1;
+        int lowCount = 0, midCount = 0, highCount = 0, averageCount = 0;
 
         // Get band data
-        for (int i = (int)(lowRange.x); i < (int)(lowRange.y); i++)
+        for (int i = (int)(lowRange.x / maxRange * sampleCount); i < (int)(lowRange.y / maxRange * sampleCount); i++)
         {
             //if (i < 0 || i >= sampleCount) break;
             low += samples[i];
+            lowCount += 1;
         }
-        for (int i = (int)(midRange.x); i < (int)(midRange.y); i++)
+        for (int i = (int)(midRange.x / maxRange * sampleCount); i < (int)(midRange.y / maxRange * sampleCount); i++)
         {
             //if (i < 0 || i >= sampleCount) break;
             mid += samples[i];
+            midCount += 1;
         }
-        for (int i = (int)(highRange.x); i < (int)(highRange.y); i++)
+        for (int i = (int)(highRange.x / maxRange * sampleCount); i < (int)(highRange.y / maxRange * sampleCount); i++)
         {
             //if (i < 0 || i >= sampleCount) break;
             high += samples[i];
+            highCount += 1;
         }
-        for (int i = (int)(averageRange.x); i < (int)(averageRange.y); i++)
+        for (int i = (int)(averageRange.x / maxRange * sampleCount); i < (int)(averageRange.y / maxRange * sampleCount); i++)
         {
             //if (i < 0 || i >= sampleCount) break;
             average += samples[i];
+            averageCount += 1;
         }
 
         // Average band data
-        low /= lowCount;
-        mid /= midCount;
-        high /= highCount;
-        average /= averageCount;
+        if (lowCount > 0) { low /= lowCount; }
+        if (midCount > 0) { mid /= midCount; }
+        if (highCount > 0) { high /= highCount; }
+        if (averageCount > 0) { average /= averageCount; }
 
         // Naturally lower normalization scale
         lowMax = Mathf.Lerp(lowMax, normalizationRange.x, Time.deltaTime * normalizationSpeed);
@@ -82,7 +88,7 @@ public class AudioManager : MonoBehaviour
         if (mid > midMax) { midMax = mid; }
         if (high > highMax) { highMax = high; }
         if (average > averageMax) { averageMax = average; }
-        
+
         // Clamp values
         if (lowMax > normalizationRange.y) { lowMax = normalizationRange.y; }
         if (midMax > normalizationRange.y) { midMax = normalizationRange.y; }

@@ -18,6 +18,9 @@ public class Instrument : MonoBehaviour
     [SerializeField] private int channelCount = 32;
     [SerializeField] private UnityEngine.Audio.AudioMixerGroup outputMixerGroup;
 
+    [Header("Gameplay")]
+    [SerializeField] private int harmonyValue = 1;
+
     private AudioSource[] channels;
 
     public float Volume
@@ -73,6 +76,8 @@ public class Instrument : MonoBehaviour
 
         AudioSource source = GetOpenChannel();
 
+        Level.AddHarmony(harmonyValue);
+
         if (source != null)
         {
             source.pitch = pitch;
@@ -84,7 +89,7 @@ public class Instrument : MonoBehaviour
         }
     }
 
-    public void SetKey(Key newKey)
+    public virtual void SetKey(Key newKey)
     {
         key = newKey;
     }

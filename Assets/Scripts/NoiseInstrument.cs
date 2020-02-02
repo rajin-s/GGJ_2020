@@ -1,25 +1,18 @@
 using UnityEngine;
 
-public class PercussionInstrument : Instrument
+public class NoiseInstrument : Instrument
 {
-    [Header("Percussion")]
     [SerializeField] PercussionKit kit;
-    [SerializeField] private int bassNote = 1;
 
     public override void PlayNote(int step)
     {
-        AudioClip clip = kit.GetClip(step);
+        AudioClip clip = kit.GetRandomClip();
         AudioSource source = GetOpenChannel();
 
         if (source != null)
         {
             source.clip = clip;
             source.Play();
-
-            if (step == bassNote)
-            {
-                InstrumentPostprocessing.DoCallback(1);
-            }
         }
         else
         {
