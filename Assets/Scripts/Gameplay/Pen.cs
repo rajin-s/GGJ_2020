@@ -15,14 +15,40 @@ public class Pen : MonoBehaviour
 
     private Instrument instrument;
 
+    [Header("Effects")]
+    [SerializeField] private SpriteRenderer background;
+    [SerializeField] private SpriteRenderer border;
+    [SerializeField] private CurveAsset borderScaleCurve;
+    [SerializeField] private CurveAsset borderBrightnessCurve;
+    [SerializeField] private Color borderFlashColor;
+
+    private Color borderBaseColor;
+    private float borderBaseScale;
+    private float backgroundBaseAlpha;
+    private float backgroundTargetAlpha;
+
+    private Coroutine currentScaleRoutine;
+    private Coroutine currentBrightnessRoutine;
+
     private void Awake()
     {
         baseScale = transform.localScale.x;
 
         instrument = GetComponent<Instrument>();
-        UpdateInstrument();
 
+        borderBaseColor = border.color;
+        borderBaseScale = border.transform.localScale.x;
+        backgroundBaseAlpha = background.color.a;
+
+        UpdateInstrument();
         Hide();
+    }
+
+    private void Update()
+    {
+        Color c = background.color;
+        c.a = Mathf.Lerp(c.a, backgroundTargetAlpha, Time.deltaTime * 4.0f);
+        background.color = c;
     }
 
     private void Hide()
@@ -51,12 +77,26 @@ public class Pen : MonoBehaviour
 
         instrument.Volume = volume;
         instrument.completeness = completeness;
+
+        backgroundTargetAlpha = backgroundBaseAlpha * fullness;
     }
 
     private void OnGainSheep(Sheep sheep)
     {
         sheepCount += sheep.Value;
         UpdateInstrument();
+
+        if (currentScaleRoutine != null)
+        {
+            StopCoroutine(currentScaleRoutine);
+        }
+        if (currentBrightnessRoutine != null)
+        {
+            StopCoroutine(currentBrightnessRoutine);
+        }
+
+        currentScaleRoutine = this.RunCurve(borderScaleCurve, (v) => { border.transform.localScale = v * Vector3.one * borderBaseScale; });
+        currentBrightnessRoutine = this.RunCurve(borderBrightnessCurve, (v) => { border.color = Color.Lerp(borderBaseColor, borderFlashColor, v); });
     }
 
     private void OnLoseSheep(Sheep sheep)
