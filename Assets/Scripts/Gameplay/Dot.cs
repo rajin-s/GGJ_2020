@@ -4,11 +4,21 @@ using System.Collections;
 public class Dot : MonoBehaviour
 {
     [SerializeField] private string targetTag;
-    [SerializeField] private float fadeDuration = 0.25f;
-    
+
+    [SerializeField] private CurveAsset fadeOutScaleCurve;
+    [SerializeField] private CurveAsset fadeOutAlphaCurve;
+
+    [SerializeField] private CurveAsset fadeInScaleCurve;
+    [SerializeField] private CurveAsset fadeInAlphaCurve;
+
+    [SerializeField] private Color pickupColor = Color.white;
+
     private DotSequence sequence;
     private SpriteRenderer sprite;
-    
+
+    private float baseScale = 1.0f;
+    private Color baseColor;
+
     private bool alive;
     private bool fading;
 
@@ -16,6 +26,9 @@ public class Dot : MonoBehaviour
     {
         sequence = GetComponentInParent<DotSequence>();
         sprite = GetComponent<SpriteRenderer>();
+
+        baseScale = transform.localScale.x;
+        baseColor = sprite.color;
     }
 
     private void OnEnable()
@@ -26,7 +39,14 @@ public class Dot : MonoBehaviour
     private void Collect()
     {
         sequence.OnDotCollected();
+        
+        baseColor = pickupColor;
+        sprite.color = baseColor;
+
+        GetComponentInChildren<ParticleSystem>().Play();
+
         Despawn();
+
         alive = false;
     }
 
@@ -44,49 +64,18 @@ public class Dot : MonoBehaviour
     public void Spawn()
     {
         gameObject.SetActive(true);
-        StartCoroutine(MakeSpawnRoutine());
+
+        this.RunCurve(fadeInScaleCurve, (v) => { transform.localScale = Vector3.one * v * baseScale; });
+        this.RunCurve(fadeInAlphaCurve, (v) => { Color c = baseColor; c.a *= v; sprite.color = c; });
     }
     public void Despawn()
     {
         fading = true;
+
         if (alive)
         {
-            StartCoroutine(MakeDespawnRoutine());
+            this.RunCurve(fadeOutScaleCurve, (v) => { transform.localScale = Vector3.one * v * baseScale; });
+            this.RunCurve(fadeOutAlphaCurve, (v) => { Color c = baseColor; c.a *= v; sprite.color = c; });
         }
-    }
-
-    private IEnumerator MakeSpawnRoutine()
-    {
-        float t = 0;
-
-        Color spriteColor = sprite.color;
-        float startAlpha = spriteColor.a;
-
-        while (t < 1.0f)
-        {
-            spriteColor.a = startAlpha * t;
-            sprite.color = spriteColor;
-            
-            t += Time.deltaTime / fadeDuration;
-            yield return null;
-        }
-    }
-    private IEnumerator MakeDespawnRoutine()
-    {
-        float t = 0;
-
-        Color spriteColor = sprite.color;
-        float startAlpha = spriteColor.a;
-
-        while (t < 1.0f)
-        {
-            spriteColor.a = startAlpha * (1f - t);
-            sprite.color = spriteColor;
-            
-            t += Time.deltaTime / fadeDuration;
-            yield return null;
-        }
-
-        gameObject.SetActive(false);
     }
 }

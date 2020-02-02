@@ -9,6 +9,7 @@ public class DotSequence : MonoBehaviour
     private Dot[] dots;
 
     private Instrument instrument;
+    bool playNext = false;
     int notesToPlay = 0;
 
     private void Awake()
@@ -47,10 +48,11 @@ public class DotSequence : MonoBehaviour
 
     private void OnSubdivision()
     {
-        if (notesToPlay > 0)
+        if (playNext)
         {
             notesToPlay -= 1;
             instrument.PlayNextNote();
+            playNext = false;
         }
     }
 
@@ -58,6 +60,7 @@ public class DotSequence : MonoBehaviour
     public void OnDotCollected()
     {
         notesToPlay += 1;
+        playNext = true;
     }
 
     // Called from timeline
