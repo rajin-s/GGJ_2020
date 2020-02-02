@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D body;
     private SheepAttractor sheepAttractor;
 
-    [SerializeField] private Vector2 input;
+    private Vector2 input;
     private bool hasInput;
 
     void Awake() 
