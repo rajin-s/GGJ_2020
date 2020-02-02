@@ -209,9 +209,9 @@ public static class CurveAssetExtensionMethods
     /// <param name="curve" type="CurveAsset">The curve to get the routine from</param>
     /// <param name="callback" type="Action(float)">Callback action that takes an input float value</param>
     /// <seealso cref="CurveAsset.Run(Action{float})" />
-    public static void RunCurve(this MonoBehaviour behaviour, CurveAsset curve, Action<float> callback)
+    public static Coroutine RunCurve(this MonoBehaviour behaviour, CurveAsset curve, Action<float> callback)
     {
-        behaviour.StartCoroutine(curve.Run(callback));
+        return behaviour.StartCoroutine(curve.Run(callback));
     }
 
     /// <summary>
