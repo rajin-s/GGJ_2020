@@ -10,6 +10,8 @@ public class PlayerController : MonoBehaviour
 
     [SerializeField] private bool useAcceleration = false;
 
+    [SerializeField] private float externalDamping = 4.0f;
+
     [SerializeField] string inputNamePrefix = "";
     private string horizontalInputName;
     private string verticalInputName;
@@ -19,9 +21,11 @@ public class PlayerController : MonoBehaviour
     private SheepAttractor sheepAttractor;
 
     private Vector2 input;
+    private Vector2 external;
+
     private bool hasInput;
 
-    void Awake() 
+    void Awake()
     {
         body = GetComponent<Rigidbody2D>();
         sheepAttractor = GetComponentInChildren<SheepAttractor>();
@@ -29,6 +33,20 @@ public class PlayerController : MonoBehaviour
         horizontalInputName = inputNamePrefix + "Horizontal";
         verticalInputName = inputNamePrefix + "Vertical";
         attractInputName = inputNamePrefix + "Attract";
+    }
+
+    private void OnDisable()
+    {
+        sheepAttractor.SetActive(false);
+        input = Vector2.zero;
+        external = Vector2.zero;
+
+        GetComponent<Collider2D>().enabled = false;
+    }
+
+    private void OnEnable()
+    {
+        GetComponent<Collider2D>().enabled = true;
     }
 
     void Update()
@@ -56,23 +74,36 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    void FixedUpdate() 
+    public void AddExternal(Vector2 amount)
     {
+        external += amount;
+    }
+
+    void FixedUpdate()
+    {
+        Vector2 finalVelocity;
+
         if (useAcceleration)
         {
             if (hasInput)
             {
                 float max = maxSpeed * input.magnitude;
-                body.velocity = Vector2.ClampMagnitude(body.velocity + input * acceleration * Time.fixedDeltaTime, max);
+                finalVelocity = Vector2.ClampMagnitude(body.velocity + input * acceleration * Time.fixedDeltaTime, max);
             }
             else
             {
-                body.velocity = Vector2.Lerp(body.velocity, Vector2.zero, Time.fixedDeltaTime * damping);
+                finalVelocity = Vector2.Lerp(body.velocity, Vector2.zero, Time.fixedDeltaTime * damping);
             }
         }
         else
         {
-            body.velocity = input * maxSpeed;
+            finalVelocity = input * maxSpeed;
         }
+
+        external = Vector2.Lerp(external, Vector2.zero, Time.fixedDeltaTime * externalDamping);
+
+        finalVelocity += external;
+
+        body.velocity = finalVelocity;
     }
 }
