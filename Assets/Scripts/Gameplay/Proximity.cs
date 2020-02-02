@@ -66,7 +66,7 @@ public class Proximity : MonoBehaviour
         float value;
         if (currentScale == 0)
         {
-            value = 0;
+            value = 1;
         }
         else
         {
@@ -82,6 +82,7 @@ public class Proximity : MonoBehaviour
     private void Hide()
     {
         transform.localScale = Vector3.zero;
+        currentScale = 0;
         GetComponent<Collider2D>().enabled = false;
     }
 
