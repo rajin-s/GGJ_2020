@@ -3232,7 +3232,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1094921742
 Transform:
   m_ObjectHideFlags: 0
@@ -3273,7 +3273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: {fileID: 11400000, guid: 97ec268ae8721bb4aa5eab083d0541a8, type: 2}
-  part: {fileID: 11400000, guid: d6f9a4aaa84d3bb49b5375465cbdd4c0, type: 2}
+  part: {fileID: 11400000, guid: aef094236892d264a9cf393ac054951b, type: 2}
   octave: 3
   clip: {fileID: 0}
   clipPitch: 440
@@ -6007,7 +6007,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1757167454
 Transform:
   m_ObjectHideFlags: 0
@@ -7100,7 +7100,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2005351641
 Transform:
   m_ObjectHideFlags: 0
@@ -7141,7 +7141,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: {fileID: 0}
-  part: {fileID: 11400000, guid: e55a2373236a97642adbf5eb13522d16, type: 2}
+  part: {fileID: 11400000, guid: 8b247aedf8839fb45950b54a7aa367c0, type: 2}
   octave: 3
   clip: {fileID: 0}
   clipPitch: 440
@@ -7210,11 +7210,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   key: {fileID: 11400000, guid: 97ec268ae8721bb4aa5eab083d0541a8, type: 2}
-  part: {fileID: 11400000, guid: e45e27cd781552e4c97a4dcd220f6929, type: 2}
-  octave: 2
+  part: {fileID: 11400000, guid: 4e62f29344b0e8b44b87183b930e27bd, type: 2}
+  octave: 4
   clip: {fileID: 8300000, guid: bf9f23bc8f23cbd4ab53cc8976f109c7, type: 3}
   clipPitch: 220
-  volume: 0.5
+  volume: 0.495
   channelCount: 8
   outputMixerGroup: {fileID: 24300002, guid: 16f9440cd76d7f143b334d7c3d737d54, type: 2}
   harmonyValue: 0
