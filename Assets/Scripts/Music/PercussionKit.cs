@@ -28,4 +28,9 @@ public class PercussionKit : ScriptableObject
             return clips[step % stepCount];
         }
     }
+
+    public AudioClip GetRandomClip()
+    {
+        return GetClip(Random.Range(0, clips.Length));
+    }
 }
