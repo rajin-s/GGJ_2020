@@ -13,3 +13,4 @@ MonoBehaviour:
   m_Name: pseq_Basic
   m_EditorClassIdentifier: 
   sequenceString: 1 x x x 2 x x 2 1 x x x 2 x x x
+  debugLength: 16
