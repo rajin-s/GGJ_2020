@@ -15,7 +15,6 @@ public class DamageCollider : MonoBehaviour
     private void OnCollisionEnter2D(Collision2D collision)
     {
         Collider2D other = collision.collider;
-        Debug.Log(other);
 
         if (targetTag.Length == 0 || other.gameObject.CompareTag(targetTag))
         {
