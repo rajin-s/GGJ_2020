@@ -196,7 +196,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targetTag: SheepA
-  lifetime: 50
+  lifetime: 45
   sizeOverLifetime:
     serializedVersion: 2
     m_Curve:
