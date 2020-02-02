@@ -2462,6 +2462,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SheepPenA (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 7002135276994649493, guid: b2bae578c4303144a8f98260ed79bd0c,
+        type: 3}
+      propertyPath: maxSheep
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 7002135276994649495, guid: b2bae578c4303144a8f98260ed79bd0c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -4676,6 +4681,11 @@ PrefabInstance:
       propertyPath: lifetime
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 7002135276994649493, guid: b2bae578c4303144a8f98260ed79bd0c,
+        type: 3}
+      propertyPath: maxSheep
+      value: 5
+      objectReference: {fileID: 0}
     - target: {fileID: 7002135276994649495, guid: b2bae578c4303144a8f98260ed79bd0c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5768,6 +5778,11 @@ PrefabInstance:
       propertyPath: lifetime
       value: 45
       objectReference: {fileID: 0}
+    - target: {fileID: 2123582150728911630, guid: 54e5a9f6bc67c8d49b87b184acf51940,
+        type: 3}
+      propertyPath: maxSheep
+      value: 5
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54e5a9f6bc67c8d49b87b184acf51940, type: 3}
 --- !u!1 &853195642 stripped
@@ -6001,6 +6016,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: SheepPenA (2)
       objectReference: {fileID: 0}
+    - target: {fileID: 7002135276994649493, guid: b2bae578c4303144a8f98260ed79bd0c,
+        type: 3}
+      propertyPath: maxSheep
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 7002135276994649495, guid: b2bae578c4303144a8f98260ed79bd0c,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -6096,6 +6116,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: SheepPenA
+      objectReference: {fileID: 0}
+    - target: {fileID: 7002135276994649493, guid: b2bae578c4303144a8f98260ed79bd0c,
+        type: 3}
+      propertyPath: maxSheep
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 7002135276994649495, guid: b2bae578c4303144a8f98260ed79bd0c,
         type: 3}
@@ -7102,6 +7127,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 2.8064697
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123582150728911630, guid: 54e5a9f6bc67c8d49b87b184acf51940,
+        type: 3}
+      propertyPath: maxSheep
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54e5a9f6bc67c8d49b87b184acf51940, type: 3}
@@ -8907,6 +8937,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalScale.z
       value: 4.2536445
+      objectReference: {fileID: 0}
+    - target: {fileID: 2123582150728911630, guid: 54e5a9f6bc67c8d49b87b184acf51940,
+        type: 3}
+      propertyPath: maxSheep
+      value: 3
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 54e5a9f6bc67c8d49b87b184acf51940, type: 3}
