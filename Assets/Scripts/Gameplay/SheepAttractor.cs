@@ -4,16 +4,16 @@ using System.Collections.Generic;
 public class SheepAttractor : MonoBehaviour
 {
     [SerializeField] private float force = 5;
+    [SerializeField] private string targetTag = "SheepA";
 
     private bool active = false;
 
-    [SerializeField]
     private List<Sheep> affectedSheep = new List<Sheep>();
 
     private void Activate()
     {
         active = true;
-    } 
+    }
     private void Deactivate()
     {
         active = false;
@@ -34,7 +34,7 @@ public class SheepAttractor : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Sheep sheep = other.GetComponent<Sheep>();
-        if (sheep != null && !affectedSheep.Contains(sheep))
+        if (sheep != null && other.gameObject.CompareTag(targetTag) && !affectedSheep.Contains(sheep))
         {
             affectedSheep.Add(sheep);
         }

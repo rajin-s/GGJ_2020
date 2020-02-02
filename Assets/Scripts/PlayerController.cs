@@ -8,6 +8,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float acceleration = 10.0f;
     [SerializeField] private float damping = 10.0f;
 
+    [SerializeField] private bool useAcceleration = false;
+
     [SerializeField] string inputNamePrefix = "";
     private string horizontalInputName;
     private string verticalInputName;
@@ -16,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private Rigidbody2D body;
     private SheepAttractor sheepAttractor;
 
-    private Vector2 input;
+    [SerializeField] private Vector2 input;
     private bool hasInput;
 
     void Awake() 
@@ -34,8 +36,8 @@ public class PlayerController : MonoBehaviour
         input.x = Input.GetAxis(horizontalInputName);
         input.y = Input.GetAxis(verticalInputName);
 
-        input.Normalize();
-        if (input.sqrMagnitude > 0.1f)
+        input = Vector2.ClampMagnitude(input, 1);
+        if (input.sqrMagnitude > 0.005f)
         {
             hasInput = true;
         }
@@ -56,13 +58,21 @@ public class PlayerController : MonoBehaviour
 
     void FixedUpdate() 
     {
-        if (hasInput)
+        if (useAcceleration)
         {
-            body.velocity = Vector2.ClampMagnitude(body.velocity + input * acceleration * Time.fixedDeltaTime, maxSpeed);
+            if (hasInput)
+            {
+                float max = maxSpeed * input.magnitude;
+                body.velocity = Vector2.ClampMagnitude(body.velocity + input * acceleration * Time.fixedDeltaTime, max);
+            }
+            else
+            {
+                body.velocity = Vector2.Lerp(body.velocity, Vector2.zero, Time.fixedDeltaTime * damping);
+            }
         }
         else
         {
-            body.velocity = Vector2.Lerp(body.velocity, Vector2.zero, Time.fixedDeltaTime * damping);
+            body.velocity = input * maxSpeed;
         }
     }
 }

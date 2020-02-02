@@ -126,6 +126,8 @@ public class RhythmManager : MonoBehaviour
 
     public static void AddHandler(Rhythm.Subdivision subdivision, Action action)
     {
+        if (singleton == null) return;
+        
         switch (subdivision)
         {
             case Rhythm.Subdivision.Whole:
@@ -173,6 +175,8 @@ public class RhythmManager : MonoBehaviour
 
     public static void RemoveHandler(Rhythm.Subdivision subdivision, Action action)
     {
+        if (singleton == null) return;
+        
         switch (subdivision)
         {
             case Rhythm.Subdivision.Whole:

@@ -3,6 +3,7 @@ using System.Collections;
 
 public class Pen : MonoBehaviour
 {
+    [SerializeField] private string targetTag = "SheepA";
     [SerializeField] private float lifetime = 10f;
     [SerializeField] private AnimationCurve sizeOverLifetime;
     [SerializeField] private AnimationCurve volumeOverFullness;
@@ -69,7 +70,7 @@ public class Pen : MonoBehaviour
     private void OnTriggerEnter2D(Collider2D other)
     {
         Sheep sheep = other.GetComponent<Sheep>();
-        if (sheep != null)
+        if (sheep != null && sheep.gameObject.CompareTag(targetTag))
         {
             OnGainSheep(sheep);
         }
@@ -77,7 +78,7 @@ public class Pen : MonoBehaviour
     private void OnTriggerExit2D(Collider2D other)
     {
         Sheep sheep = other.GetComponent<Sheep>();
-        if (sheep != null)
+        if (sheep != null && sheep.gameObject.CompareTag(targetTag))
         {
             OnLoseSheep(sheep);
         }

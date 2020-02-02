@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2066461274407686843}
   - component: {fileID: 384302571}
   m_Layer: 8
-  m_Name: Player1
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -135,9 +135,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxSpeed: 10
-  acceleration: 40
-  damping: 10
+  acceleration: 25
+  damping: 5
   inputNamePrefix: 
+  input: {x: 0, y: 0}
 --- !u!1 &8307270979246592188
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,4 +251,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   force: 5
-  affectedSheep: []
+  targetTag: SheepA
