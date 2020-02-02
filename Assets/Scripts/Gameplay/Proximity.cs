@@ -38,7 +38,9 @@ public class Proximity : MonoBehaviour
     {
         baseScale = transform.localScale.x;
         instrument = GetComponent<Instrument>();
-        Hide();
+        if (lifetime > 0){
+            Hide();
+        }
         UpdateInstrument();
 
         baseRadius = GetComponentInChildren<CircleCollider2D>().radius;
