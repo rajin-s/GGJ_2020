@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ace61274c39c67e48a9635b91e894749, type: 3}
+  m_Name: KS_HarmonicMinor
+  m_EditorClassIdentifier: 
+  phrases:
+  - keys:
+    - {fileID: 11400000, guid: 2a3035ff79cd2fb41aa1c0f54ef48a25, type: 2}
+    - {fileID: 11400000, guid: bae4e1210baa5534d95e99fdbb37e424, type: 2}
+    - {fileID: 11400000, guid: f1f8c12756ad8da4fb5a0a008da3d792, type: 2}
+  - keys:
+    - {fileID: 11400000, guid: 8348a12c74a4263448564051de368238, type: 2}
+    - {fileID: 11400000, guid: 816daf0fd95efcb4f9132c2912dd9434, type: 2}
+    - {fileID: 11400000, guid: 495402e0db8292c46aeef25c42aa9ea6, type: 2}
+  - keys:
+    - {fileID: 11400000, guid: 454928ad0ca716c409fde8d84c69a002, type: 2}
+    - {fileID: 11400000, guid: e27c525f54a27ec479522499ca714df2, type: 2}
+    - {fileID: 11400000, guid: 6ecb14082cc122a469259bd7027b68d6, type: 2}
