@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LevelSwitcher : MonoBehaviour
 {
+    [SerializeField] LevelManager manager;
     [SerializeField] string levelToLoad;
     [SerializeField] string playerTag;
     [SerializeField] string button;
@@ -39,6 +40,6 @@ public class LevelSwitcher : MonoBehaviour
 
     public void ChangeLevel()
     {
-        LevelManager.instance.LevelChanger(levelToLoad);
+        manager.LevelChanger(levelToLoad);
     }
 }

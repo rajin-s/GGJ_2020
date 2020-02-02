@@ -5,24 +5,10 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    public static LevelManager instance;
+    //public static LevelManager instance;
     //[SerializeField] GameObject sceneObjects;
     [SerializeField] Animator transition;
     [SerializeField] float transitionTime = 1f;
-
-    private void Awake()
-    {
-        if (instance != null)
-        {
-            GameObject.Destroy(instance);
-        }
-        else
-        {
-            instance = this;
-        }
-
-        //DontDestroyOnLoad(this);
-    }
 
     public void LevelChanger(string level)
     {

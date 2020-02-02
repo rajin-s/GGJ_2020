@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class Timeline : MonoBehaviour
 {
+    [SerializeField] private LevelManager manager;
     [SerializeField] private Transform playHead, start, end;
     [SerializeField] private float duration = 100;
     
@@ -33,5 +34,6 @@ public class Timeline : MonoBehaviour
         }
 
         rhythmManager.EndTime();
+        manager.LevelChanger("LevelSelect");
     }
 }
