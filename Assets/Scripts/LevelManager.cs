@@ -22,14 +22,14 @@ public class LevelManager : MonoBehaviour
         yield return new WaitForSeconds(transitionTime);
 
         //sceneObjects.SetActive(false);
-        SceneManager.LoadScene(levelToLoad);
-        //AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelToLoad);
+        //SceneManager.LoadScene(levelToLoad);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelToLoad);
 
-        // Wait until the asynchronous scene fully loads
-        // while (!asyncLoad.isDone)
-        // {
-        //     yield return null;
-        // }
+        //Wait until the asynchronous scene fully loads
+        while (!asyncLoad.isDone)
+        {
+            yield return null;
+        }
 
         Resources.UnloadUnusedAssets();
         //yield return null;
