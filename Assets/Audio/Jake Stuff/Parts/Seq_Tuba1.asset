@@ -9,7 +9,8 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ace61274c39c67e48a9635b91e894749, type: 3}
-  m_Name: KS_
+  m_Script: {fileID: 11500000, guid: cb4be48d000ac964b97b692f1c1d8b08, type: 3}
+  m_Name: Seq_Tuba1
   m_EditorClassIdentifier: 
-  phrases: []
+  sequenceString: '1 x 2 x 3 x 2 x 1 x 5 x 4 x 5 '
+  debugLength: 16

@@ -34,7 +34,7 @@ public class LevelSwitcher : MonoBehaviour
     {
         if (Input.GetButtonDown(button) && canTransition && inside)
         {
-            Debug.Log(levelToLoad);
+            //Debug.Log(levelToLoad);
             canTransition = false;
             ChangeLevel();
         }    
