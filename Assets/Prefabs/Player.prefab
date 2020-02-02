@@ -5150,7 +5150,7 @@ MonoBehaviour:
   acceleration: 25
   damping: 5
   useAcceleration: 0
-  externalDamping: 4
+  externalDamping: 3
   inputNamePrefix: 
 --- !u!114 &2198032302992375781
 MonoBehaviour:

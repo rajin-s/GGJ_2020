@@ -21,7 +21,7 @@ public class PlayerController : MonoBehaviour
     private SheepAttractor sheepAttractor;
 
     private Vector2 input;
-    private Vector2 external;
+    private Vector2 finalVelocity;
 
     private bool hasInput;
 
@@ -39,7 +39,7 @@ public class PlayerController : MonoBehaviour
     {
         sheepAttractor.SetActive(false);
         input = Vector2.zero;
-        external = Vector2.zero;
+        finalVelocity = Vector2.zero;
 
         GetComponent<Collider2D>().enabled = false;
     }
@@ -76,34 +76,31 @@ public class PlayerController : MonoBehaviour
 
     public void AddExternal(Vector2 amount)
     {
-        external += amount;
+        finalVelocity += amount;
     }
 
     void FixedUpdate()
     {
-        Vector2 finalVelocity;
+        Vector2 inputVelocity;
 
         if (useAcceleration)
         {
             if (hasInput)
             {
                 float max = maxSpeed * input.magnitude;
-                finalVelocity = Vector2.ClampMagnitude(body.velocity + input * acceleration * Time.fixedDeltaTime, max);
+                inputVelocity = Vector2.ClampMagnitude(body.velocity + input * acceleration * Time.fixedDeltaTime, max);
             }
             else
             {
-                finalVelocity = Vector2.Lerp(body.velocity, Vector2.zero, Time.fixedDeltaTime * damping);
+                inputVelocity = Vector2.Lerp(body.velocity, Vector2.zero, Time.fixedDeltaTime * damping);
             }
         }
         else
         {
-            finalVelocity = input * maxSpeed;
+            inputVelocity = input * maxSpeed;
         }
 
-        external = Vector2.Lerp(external, Vector2.zero, Time.fixedDeltaTime * externalDamping);
-
-        finalVelocity += external;
-
+        finalVelocity = Vector2.Lerp(finalVelocity, inputVelocity, Time.fixedDeltaTime * externalDamping);
         body.velocity = finalVelocity;
     }
 }

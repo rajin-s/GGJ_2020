@@ -47,12 +47,6 @@ public class PlayerHealth : MonoBehaviour
             float healthValue = currentHealth / maxHealth;
             coreSprite.color = colorOverHealth.Evaluate(healthValue);
         }
-
-        // TEST
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            Damage(1, Random.insideUnitCircle * 4);
-        }
     }
 
     public void Damage(float amount, Vector2 knockback)
@@ -109,7 +103,7 @@ public class PlayerHealth : MonoBehaviour
     private void OnRespawn()
     {
         isDead = false;
-        
+
         respawnEffect.Play();
         respawnSFX.Play();
 
