@@ -17,7 +17,7 @@ public class LevelSwitcher : MonoBehaviour
         if (other.gameObject.CompareTag(playerTag))
         {
             //Debug.Log("Ahhhhhhhhhhhhhhhhhhhhhhhhh");
-            Debug.Log(other.tag);
+            //Debug.Log(other.tag);
             inside = true;
         }
     }
