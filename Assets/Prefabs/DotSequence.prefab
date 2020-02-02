@@ -52,6 +52,8 @@ MonoBehaviour:
   volume: 0.5
   channelCount: 32
   outputMixerGroup: {fileID: 24300002, guid: 16f9440cd76d7f143b334d7c3d737d54, type: 2}
+  harmonyValue: 1
+  completeness: 1
 --- !u!114 &2390846664075754222
 MonoBehaviour:
   m_ObjectHideFlags: 0
