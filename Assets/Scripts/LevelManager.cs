@@ -5,48 +5,33 @@ using UnityEngine.SceneManagement;
 
 public class LevelManager : MonoBehaviour
 {
-    [SerializeField] GameObject sceneObjects;
-    public static LevelManager instance;
+    //public static LevelManager instance;
+    //[SerializeField] GameObject sceneObjects;
+    [SerializeField] Animator transition;
+    [SerializeField] float transitionTime = 1f;
 
-    private void Awake()
+    public void LevelChanger(string level)
     {
-        if (instance != null)
-        {
-            GameObject.Destroy(instance);
-        }
-        else
-        {
-            instance = this;
-        }
-
-        DontDestroyOnLoad(this);
+        StartCoroutine(ChangeLevel(level));
     }
 
-    public IEnumerator ChangeLevel(string levelToLoad)
+    private IEnumerator ChangeLevel(string levelToLoad)
     {
-        sceneObjects.SetActive(false);
+        transition.SetTrigger("Start");
+
+        yield return new WaitForSeconds(transitionTime);
+
+        //sceneObjects.SetActive(false);
         //SceneManager.LoadScene(levelToLoad, LoadSceneMode.Additive);
-        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelToLoad, LoadSceneMode.Additive);
+        AsyncOperation asyncLoad = SceneManager.LoadSceneAsync(levelToLoad);
 
         // Wait until the asynchronous scene fully loads
         while (!asyncLoad.isDone)
         {
             yield return null;
         }
-        //yield return null;
-    }
 
-    public IEnumerator EndLevel(string currentLevel)
-    {
-        AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(currentLevel);
-
-        // Wait until the asynchronous scene fully loads
-        while (!asyncUnload.isDone)
-        {
-            yield return null;
-        }
         Resources.UnloadUnusedAssets();
-        sceneObjects.SetActive(true);
         //yield return null;
     }
 }
