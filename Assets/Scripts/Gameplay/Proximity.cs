@@ -26,8 +26,8 @@ public class Proximity : MonoBehaviour
     {
         baseScale = transform.localScale.x;
         instrument = GetComponent<Instrument>();
-        // gameObject.SetActive(false);
-        Spawn();
+        UpdateInstrument();
+        Hide();
     }
 
     private void OnTriggerEnter2D(Collider2D other)
@@ -79,8 +79,20 @@ public class Proximity : MonoBehaviour
         instrument.completeness = completenessOverDistance.Evaluate(value);
     }
 
+    private void Hide()
+    {
+        transform.localScale = Vector3.zero;
+        GetComponent<Collider2D>().enabled = false;
+    }
+
+    private void Show()
+    {
+        GetComponent<Collider2D>().enabled = true;
+    }
+
     public void Spawn()
     {
+        Show();
         StartCoroutine(MakeLifetimeRoutine());
     }
 

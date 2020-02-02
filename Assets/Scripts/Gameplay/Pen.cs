@@ -8,13 +8,13 @@ public class Pen : MonoBehaviour
     [SerializeField] private AnimationCurve sizeOverLifetime;
     [SerializeField] private AnimationCurve volumeOverFullness;
     [SerializeField] private AnimationCurve completenessOverFullness;
-    
+
     [SerializeField] private int maxSheep = 10;
     private int sheepCount = 0;
     private float baseScale = 1;
 
     private Instrument instrument;
-    
+
     private void Awake()
     {
         baseScale = transform.localScale.x;
@@ -22,18 +22,30 @@ public class Pen : MonoBehaviour
         instrument = GetComponent<Instrument>();
         UpdateInstrument();
 
+        Hide();
+    }
+
+    private void Hide()
+    {
         transform.localScale = Vector3.zero;
+        GetComponent<Collider2D>().enabled = false;
+    }
+
+    private void Show()
+    {
+        GetComponent<Collider2D>().enabled = true;
     }
 
     public void Spawn()
     {
+        Show();
         StartCoroutine(MakeLifetimeRoutine());
     }
 
     private void UpdateInstrument()
     {
         float fullness = Mathf.Clamp01((float)sheepCount / maxSheep);
-        
+
         float volume = volumeOverFullness.Evaluate(fullness);
         float completeness = completenessOverFullness.Evaluate(fullness);
 
