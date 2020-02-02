@@ -24,7 +24,12 @@ public class LevelManager : MonoBehaviour
         //DontDestroyOnLoad(this);
     }
 
-    public IEnumerator ChangeLevel(string levelToLoad)
+    public void LevelChanger(string level)
+    {
+        StartCoroutine(ChangeLevel(level));
+    }
+
+    private IEnumerator ChangeLevel(string levelToLoad)
     {
         transition.SetTrigger("Start");
 
@@ -43,31 +48,4 @@ public class LevelManager : MonoBehaviour
         Resources.UnloadUnusedAssets();
         //yield return null;
     }
-
-    // public IEnumerator EndLevel(string currentLevel)
-    // {
-    //     transition.SetTrigger("Start");
-
-    //     yield return new WaitForSeconds(transitionTime);
-
-    //     AsyncOperation asyncLoad = SceneManager.LoadSceneAsync("LevelSelect");
-
-    //     // Wait until the asynchronous scene fully loads
-    //     while (!asyncLoad.isDone)
-    //     {
-    //         yield return null;
-    //     }
-
-    //     AsyncOperation asyncUnload = SceneManager.UnloadSceneAsync(currentLevel);
-
-    //     // Wait until the asynchronous scene fully loads
-    //     while (!asyncUnload.isDone)
-    //     {
-    //         yield return null;
-    //     }
-        
-    //     Resources.UnloadUnusedAssets();
-    //     //sceneObjects.SetActive(true);
-    //     //yield return null;
-    // }
 }
